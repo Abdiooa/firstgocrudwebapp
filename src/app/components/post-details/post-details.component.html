@@ -1,0 +1,59 @@
+<div class="post-details">
+    <div *ngIf="currentPost.ID">
+      <h4>Post Details</h4>
+      <div class="post-info">
+        <div>
+          <label><strong>Title:</strong></label> {{ currentPost.Title }}
+        </div>
+        <div>
+          <label><strong>Body:</strong></label> {{ currentPost.Body }}
+        </div>
+        <div>
+          <label><strong>Created At:</strong></label> {{ currentPost.CreatedAt | date:'medium' }}
+        </div>
+        <div>
+          <label><strong>Updated At:</strong></label> {{ currentPost.UpdatedAt | date:'medium' }}
+        </div>
+      </div>
+      <div class="post-actions">
+        <button class="btn btn-primary mr-2" (click)="editMode = !editMode">
+          {{ editMode ? 'Cancel Edit' : 'Edit' }}
+        </button>
+        <button class="btn btn-danger mr-2" (click)="deletePost(currentPost.ID)">
+          Delete
+        </button>
+      </div>
+      <div *ngIf="editMode" class="edit-form mt-3">
+        <h4>Edit Post</h4>
+        <form>
+          <div class="form-group mb-3">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              [(ngModel)]="currentPost.Title"
+              name="title"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="body">Body</label>
+            <textarea
+              class="form-control"
+              id="body"
+              [(ngModel)]="currentPost.Body"
+              name="body"
+              rows="5"
+            ></textarea>
+          </div>
+          <button type="button" class="btn btn-success" (click)="updatePost()">
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="!currentPost.ID">
+      <p>Please click on a Post...</p>
+    </div>
+  </div>
+  

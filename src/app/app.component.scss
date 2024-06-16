@@ -1,0 +1,21 @@
+/* Custom styles for the navbar */
+.navbar {
+  background-color: #343a40; /* Dark background color */
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Larger font size for brand */
+}
+
+.nav-link {
+  color: #ffffff; /* White text color */
+}
+
+.nav-link:hover {
+  color: #f8f9fa; /* Lighter text color on hover */
+}
+
+/* Active link style */
+.nav-link.active {
+  font-weight: bold; /* Bold font weight for active link */
+}

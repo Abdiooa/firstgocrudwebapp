@@ -1,0 +1,24 @@
+.list {
+  .form-control {
+    margin-bottom: 1rem;
+  }
+
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.active {
+      background-color: #007bff;
+      color: white;
+    }
+  }
+
+  .btn {
+    margin-left: 0.5rem;
+  }
+
+  h4 {
+    margin-top: 1rem;
+  }
+}
